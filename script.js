@@ -1,30 +1,39 @@
-window.addEventListener("DOMContentLoaded", function () {
-    alert("Hello and welcome to Elihle Stali's Portfolio!");
-    alert("Please note that this is a work in progress and not all links are functional yet.");
+document.addEventListener("DOMContentLoaded", function() {
+    const githubUsername = "elihles"; // Your GitHub username
+    const projectsContainer = document.getElementById("github-projects");
+    let currentPage = 1;
   
-    // Show current date in footer
-    const dateTime = new Date().toLocaleString();
-    const footer = document.querySelector("footer");
-    const dateEl = document.createElement("p");
-    dateEl.textContent = `📅 Current Date and Time: ${dateTime}`;
-    footer.appendChild(dateEl);
+    function fetchProjects(page) {
+      const url = `https://api.github.com/users/${githubUsername}/repos?per_page=5&page=${page}`;
+      
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          if (data.length === 0) {
+            document.getElementById("load-more").style.display = 'none';
+            return;
+          }
+          data.forEach(project => {
+            const projectCard = document.createElement("div");
+            projectCard.classList.add("project-card");
+            projectCard.innerHTML = `
+              <a href="${project.html_url}" target="_blank">${project.name}</a>
+              <p>${project.description || "No description available"}</p>
+            `;
+            projectsContainer.appendChild(projectCard);
+          });
+        })
+        .catch(error => console.error("Error fetching projects:", error));
+    }
   
-    // GitHub Repos Fetch
-    fetch("https://api.github.com/users/elihles/repos")
-      .then(res => res.json())
-      .then(data => {
-        const list = document.getElementById("github-projects");
-        list.innerHTML = ""; // Clear loading text
-        data.forEach(repo => {
-          const li = document.createElement("li");
-          li.innerHTML = `<a href="${repo.html_url}" target="_blank">📌 ${repo.name}</a>`;
-          list.appendChild(li);
-        });
-      })
-      .catch(err => {
-        const list = document.getElementById("github-projects");
-        list.innerHTML = "<li>⚠️ Failed to load GitHub projects.</li>";
-      });
+    fetchProjects(currentPage);
+  
+    document.getElementById("load-more").addEventListener("click", function () {
+      currentPage++;
+      fetchProjects(currentPage);
+    });
+  
+    // Set footer date dynamically
+    document.getElementById("footer-date").textContent = new Date().getFullYear();
   });
-  
   

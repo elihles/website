@@ -10,8 +10,8 @@
 <body>
   <div class="container">
     <header>
-      <h1>Elihle Stali</h1>
-      <p>BCom Computer Science & Information Systems</p>
+      <h1>Elihle Stali Portfolio</h1>
+      <p>BCom Computer Science & Information Systems Student</p>
       <p>Nelson Mandela University</p>
     </header>
 
@@ -26,7 +26,6 @@
       </p>
     </section>
 
-    <!-- Achievements Section -->
     <section class="achievements">
       <h2>🏆 Achievements</h2>
       <ul>
@@ -38,7 +37,6 @@
       </ul>
     </section>
 
-    <!-- Social Links Section -->
     <section class="social-links">
       <h2>📱 Connect With Me</h2>
       <ul>
@@ -47,13 +45,56 @@
       </ul>
     </section>
 
+    <!-- Programming Skills Section -->
+    <section class="programming-skills">
+        <h2>💻 My Programming Skills</h2>
+        <div class="skills-container">
+          <img src="R studio.png" alt="R Studio" class="skill-img" />
+          <img src="python.jpeg" alt="Python" class="skill-img" />
+          <img src="matlab.jpeg" alt="Matlab" class="skill-img" />
+          <img src="js.png" alt="JavaScript" class="skill-img" />
+          <img src="java.png" alt="Java" class="skill-img" />
+          <img src="css.jpeg" alt="CSS" class="skill-img" />
+          <img src="c++.png" alt="C++" class="skill-img" />
+          <img src="csharp.png" alt="C#" class="skill-img" />
+
+        </div>
+    
+      
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact">
+      <h2>📩 Get in Touch</h2>
+      <p>If you'd like to reach out, please leave your details and message below.</p>
+      
+      <form id="contact-form">
+        <div class="form-group">
+          <label for="first-name">First Name:</label>
+          <input type="text" id="first-name" name="first-name" required />
+        </div>
+        <div class="form-group">
+          <label for="last-name">Last Name:</label>
+          <input type="text" id="last-name" name="last-name" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Your Message:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <!-- Projects Section -->
     <section class="projects">
       <h2>📂 My GitHub Projects</h2>
-      <ul id="github-projects">Loading projects...</ul>
+      <div id="github-projects" class="projects-grid">Loading projects...</div>
+      <button id="load-more" class="load-more-btn">Load More</button>
     </section>
 
     <footer>
       <p>© 2025 Elihle Stali • Portfolio</p>
+      <p id="footer-date"></p>
     </footer>
   </div>
 </body>
