@@ -4,8 +4,7 @@ This is my personal portfolio website built using **HTML**, **CSS**, and **JavaS
 
 ## 🚀 Live Demo
 
-[Click here to view the live site](https://your-username.github.io/your-repo-name/)  
-> Replace the link above with your actual GitHub Pages link after deployment.
+http://127.0.0.1:5500/index.html
 
 ## 🧠 Features
 
@@ -32,9 +31,9 @@ This website serves as a digital representation of who I am as a developer. It's
 ## 📬 Contact
 
 Feel free to connect with me via:
-- **Email:** your.email@example.com
-- **LinkedIn:** [Your LinkedIn](https://linkedin.com/in/your-profile)
-- **GitHub:** [Your GitHub](https://github.com/your-username)
+- Email: Elihlestali@gmail.com
+- LinkedIn:https://www.linkedin.com/in/elihle-amahle-stali-428305351/
+- GitHub: https://github.com/elihles
 
 ---
 
